@@ -1,4 +1,7 @@
 {
-  "name": "Plus na kart\u0119",
-  "homeassistant": "2026.10.0"
+  "name": "Plus na kartę",
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "iplus.zip",
+  "homeassistant": "2025.1.0"
 }

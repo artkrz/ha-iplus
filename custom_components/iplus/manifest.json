@@ -1,13 +1,16 @@
 {
   "domain": "iplus",
-  "name": "Plus na kart\u0119",
-  "version": "0.1.0",
+  "name": "Plus na kartę",
+  "codeowners": [
+    "@artkrz"
+  ],
   "config_flow": true,
+  "documentation": "https://github.com/artkrz/ha-iplus",
+  "integration_type": "service",
   "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/artkrz/ha-iplus/issues",
   "requirements": [
     "requests>=2.32"
   ],
-  "codeowners": [],
-  "documentation": "https://example.com/iplus",
-  "issue_tracker": "https://example.com/iplus/issues"
+  "version": "0.2.0"
 }

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from plus_balance.parser import parse_products, summarize_packages
+from plus_balance.parser import parse_account_balance, parse_products, summarize_packages
 
 
 def test_fixture():
@@ -39,3 +39,17 @@ def test_filters_and_missing_expiry():
     assert packages[0]['renews'] is False
     assert summarize_packages(packages) == {'total_remaining_gb': 0, 'total_gb': 0, 'valid_until': None}
     assert parse_products({'products': [{'status': 'active', 'categories': None}]}) == []
+
+
+def test_account_balance_fixture():
+    payload = json.loads((Path(__file__).parent / 'fixtures/account_balance.json').read_text())
+    assert parse_account_balance(payload) == {
+        'amount': 25.03, 'currency': 'PLN',
+        'account_valid_until': '2027-10-28T13:17:06+01:00', 'overdue_amount': 0.0,
+    }
+
+
+def test_account_balance_missing_expiry():
+    assert parse_account_balance({'balance': {'amount': '0', 'overdueAmount': '1.5'}}) == {
+        'amount': 0.0, 'currency': 'PLN', 'account_valid_until': None, 'overdue_amount': 1.5,
+    }

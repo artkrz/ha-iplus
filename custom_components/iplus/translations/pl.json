@@ -48,13 +48,19 @@
   "entity": {
     "sensor": {
       "remaining_data": {
-        "name": "Pozostałe dane"
+        "name": "Pozostały transfer danych"
       },
       "total_data": {
-        "name": "Łączne dane"
+        "name": "Łączny transfer danych"
       },
       "valid_until": {
-        "name": "Ważne do"
+        "name": "Pakiet danych ważny do"
+      },
+      "account_balance": {
+        "name": "Saldo konta"
+      },
+      "account_valid_until": {
+        "name": "Konto ważne do"
       }
     }
   }

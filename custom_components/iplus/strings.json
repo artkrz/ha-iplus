@@ -1,9 +1,9 @@
 {
-  "title": "Plus na kart\u0119",
+  "title": "Plus na kartę",
   "config": {
     "step": {
       "user": {
-        "title": "Plus na kart\u0119",
+        "title": "Plus na kartę",
         "description": "Sign in to your Plus account.",
         "data": {
           "username": "Username or email",
@@ -55,6 +55,12 @@
       },
       "valid_until": {
         "name": "Valid until"
+      },
+      "account_balance": {
+        "name": "Account balance"
+      },
+      "account_valid_until": {
+        "name": "Account valid until"
       }
     }
   }

@@ -5,7 +5,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from plus_balance.client import PlusClient, PlusError
+from plus_balance.client import AuthenticationError, SMSRequired, PlusClient, PlusError
 
 
 def response(payload, status=200):
@@ -48,7 +48,7 @@ def test_retry_denied_is_error(client):
     client.state['iplus_session'] = {'accessToken': 'old'}
     client._request = Mock(return_value=response({}, 403))
     client._ensure_iplus = Mock(return_value={'accessToken': 'new'})
-    with pytest.raises(PlusError, match='403'):
+    with pytest.raises(AuthenticationError, match='403'):
         client._api_get('/test')
     assert client._request.call_count == 2
 
@@ -59,10 +59,13 @@ def test_products_per_selected_subscription(client):
     client._api_get = Mock(side_effect=[{'accounts': [
         {'type': 'Prepaid', 'isAuthorized': True, 'subscriptions': [{'msisdn': '48000000000'}, {'msisdn': '48000000001'}]},
         {'type': 'Postpaid', 'isAuthorized': True, 'subscriptions': [{'msisdn': '48000000002'}]},
-    ]}, fixture])
+    ]}, fixture, json.loads((Path(__file__).parent / 'fixtures/account_balance.json').read_text())])
     result = client.get_balance('000000001')
-    assert client._api_get.call_args.args == ('/v1/subscription/48000000001/products?productType=data',)
+    assert client._api_get.call_args_list[1].args == ('/v1/subscription/48000000001/products?productType=data',)
+    assert client._api_get.call_args.args == ('/v1/subscription/48000000001/balance?billsLimit=1',)
     subscription, = result['subscriptions']
+    assert subscription['account']['amount'] == 25.03
+    assert subscription['account']['account_valid_until'] == '2027-10-28T13:17:06+01:00'
     assert subscription['msisdn'] == '48000000001'
     assert subscription['total_remaining_gb'] == 8.49
     assert subscription['valid_until'] == '2026-12-07T09:33:48+00:00'
@@ -77,3 +80,27 @@ def test_reset_login_lock_clears_failure_and_counter(tmp_path):
     reloaded = PlusClient('user@example.com', 'secret', session_path=tmp_path / 's.json')
     assert reloaded.state['login_failed'] is False
     assert reloaded.state['password_submissions'] == 0
+
+
+@pytest.mark.parametrize('error', [PlusError('HTTP 500'), ValueError('invalid'), KeyError('balance')])
+def test_account_failure_preserves_data(client, error):
+    client.ensure_session = Mock()
+    fixture = json.loads((Path(__file__).parent / 'fixtures/products_data.json').read_text())
+    client._api_get = Mock(side_effect=[{'accounts': [{
+        'type': 'Prepaid', 'isAuthorized': True,
+        'subscriptions': [{'msisdn': '48000000001'}, {'msisdn': '48000000002'}],
+    }]}, fixture, error, fixture, {'balance': {'amount': 0}}])
+    first, second = client.get_balance()['subscriptions']
+    assert first['account'] is None
+    assert first['total_remaining_gb'] == 8.49
+    assert second['account']['amount'] == 0.0
+
+
+@pytest.mark.parametrize('error', [AuthenticationError(), SMSRequired()])
+def test_account_auth_failure_propagates(client, error):
+    client.ensure_session = Mock()
+    client._api_get = Mock(side_effect=[{'accounts': [{
+        'type': 'Prepaid', 'isAuthorized': True, 'subscriptions': [{'msisdn': '48000000001'}],
+    }]}, {}, error])
+    with pytest.raises(type(error)):
+        client.get_balance()

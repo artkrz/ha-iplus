@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import uuid
@@ -359,6 +360,8 @@ class PlusClient:
             if r.status_code in (401, 403) and attempt == 0:
                 session = self._ensure_iplus(force=True)
                 continue
+            if r.status_code in (401, 403):
+                raise AuthenticationError(f'Plus data API authentication failed (HTTP {r.status_code})')
             if r.status_code >= 400:
                 raise PlusError(f'Plus data API failed (HTTP {r.status_code})')
             return self._json(r)
@@ -366,7 +369,7 @@ class PlusClient:
     def get_balance(self, msisdn: str | None = None):
         """Read active prepaid data usages for each authorized subscription."""
         from urllib.parse import quote
-        from .parser import parse_products, summarize_packages
+        from .parser import parse_account_balance, parse_products, summarize_packages
         self.ensure_session()
         linked = self._api_get('/v1/sso/authorized-accounts')
         selected = re.sub(r'\D', '', msisdn) if msisdn else None
@@ -393,7 +396,15 @@ class PlusClient:
                 package['valid_until'] = date.isoformat() if date else None
             date = summary['valid_until']
             summary['valid_until'] = date.isoformat() if date else None
-            balances.append({'msisdn': number, 'packages': packages, **summary})
+            try:
+                account = parse_account_balance(self._api_get(
+                    '/v1/subscription/' + quote(number, safe='') + '/balance?billsLimit=1'))
+            except (AuthenticationError, SMSRequired):
+                raise
+            except (PlusError, ValueError, TypeError, KeyError):
+                logging.getLogger(__name__).debug('Account balance unavailable for a subscription')
+                account = None
+            balances.append({'msisdn': number, 'packages': packages, **summary, 'account': account})
         return {'subscriptions': balances}
 
     def close(self):

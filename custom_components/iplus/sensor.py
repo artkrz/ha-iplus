@@ -10,7 +10,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
     coordinator = entry.runtime_data
     async_add_entities(PlusSensor(coordinator, subscription["msisdn"], key)
                        for subscription in coordinator.data["subscriptions"]
-                       for key in ("remaining_data", "total_data", "valid_until"))
+                       for key in ("remaining_data", "total_data", "valid_until", "account_balance", "account_valid_until"))
 
 class PlusSensor(CoordinatorEntity, SensorEntity):
     _attr_has_entity_name = True
@@ -22,8 +22,14 @@ class PlusSensor(CoordinatorEntity, SensorEntity):
         self._attr_translation_key = key
         self._attr_device_info = DeviceInfo(identifiers={(DOMAIN, msisdn)},
             name=f"Plus {msisdn}", manufacturer="Plus", model="Prepaid")
-        if key == "valid_until":
+        if key in ("valid_until", "account_valid_until"):
             self._attr_device_class = SensorDeviceClass.TIMESTAMP
+        elif key == "account_balance":
+            self._attr_device_class = SensorDeviceClass.MONETARY
+            self._attr_state_class = SensorStateClass.TOTAL
+            self._attr_native_unit_of_measurement = "PLN"
+            self._attr_icon = "mdi:cash"
+            self._attr_suggested_display_precision = 2
         else:
             self._attr_device_class = SensorDeviceClass.DATA_SIZE
             self._attr_state_class = SensorStateClass.MEASUREMENT
@@ -37,13 +43,18 @@ class PlusSensor(CoordinatorEntity, SensorEntity):
 
     @property
     def available(self):
-        return super().available and bool(self.subscription)
+        return (super().available and bool(self.subscription)
+                and (not self.key.startswith("account_") or self.subscription.get("account") is not None))
 
     @property
     def native_value(self):
-        value = self.subscription.get({"remaining_data": "total_remaining_gb",
+        if self.key.startswith("account_"):
+            account = self.subscription.get("account") or {}
+            value = account.get("amount" if self.key == "account_balance" else "account_valid_until")
+        else:
+            value = self.subscription.get({"remaining_data": "total_remaining_gb",
             "total_data": "total_gb", "valid_until": "valid_until"}[self.key])
-        if self.key == "valid_until" and isinstance(value, str):
+        if self.key in ("valid_until", "account_valid_until") and isinstance(value, str):
             return dt_util.parse_datetime(value)
         return value
 
