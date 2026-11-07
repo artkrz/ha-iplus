@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.plus_session*
+session*.json
+debug/
