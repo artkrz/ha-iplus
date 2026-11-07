@@ -5,3 +5,4 @@ __pycache__/
 .plus_session*
 session*.json
 debug/
+.venv-ha/

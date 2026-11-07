@@ -1,0 +1,13 @@
+{
+  "domain": "iplus",
+  "name": "Plus na kart\u0119",
+  "version": "0.1.0",
+  "config_flow": true,
+  "iot_class": "cloud_polling",
+  "requirements": [
+    "requests>=2.32"
+  ],
+  "codeowners": [],
+  "documentation": "https://example.com/iplus",
+  "issue_tracker": "https://example.com/iplus/issues"
+}

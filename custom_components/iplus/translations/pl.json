@@ -1,0 +1,61 @@
+{
+  "title": "Plus na kartę",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Plus na kartę",
+        "description": "Zaloguj się do konta Plus.",
+        "data": {
+          "username": "Login lub e-mail",
+          "password": "Hasło"
+        }
+      },
+      "sms": {
+        "title": "Weryfikacja SMS",
+        "description": "Wpisz czterocyfrowy kod SMS od Plus. Zapisana sesja zostanie wznowiona.",
+        "data": {
+          "code": "Kod SMS"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponowne logowanie",
+        "description": "Potwierdź hasło do konta Plus. Może być wymagany kod SMS.",
+        "data": {
+          "password": "Hasło"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Nieprawidłowe dane logowania.",
+      "cannot_connect": "Nie można połączyć się z Plus.",
+      "invalid_code": "Wpisz dokładnie cztery cyfry."
+    },
+    "abort": {
+      "already_configured": "To konto jest już skonfigurowane.",
+      "reauth_successful": "Ponowne logowanie zakończone."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Odświeżanie",
+        "data": {
+          "scan_interval": "Interwał odświeżania (minuty, minimum 15)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "remaining_data": {
+        "name": "Pozostałe dane"
+      },
+      "total_data": {
+        "name": "Łączne dane"
+      },
+      "valid_until": {
+        "name": "Ważne do"
+      }
+    }
+  }
+}

@@ -67,3 +67,13 @@ def test_products_per_selected_subscription(client):
     assert subscription['total_remaining_gb'] == 8.49
     assert subscription['valid_until'] == '2026-12-07T09:33:48+00:00'
     json.dumps(result)
+
+
+def test_reset_login_lock_clears_failure_and_counter(tmp_path):
+    from plus_balance.client import PlusClient
+    client = PlusClient('user@example.com', 'secret', session_path=tmp_path / 's.json')
+    client.state.update(login_failed=True, password_submissions=3)
+    client.reset_login_lock()
+    reloaded = PlusClient('user@example.com', 'secret', session_path=tmp_path / 's.json')
+    assert reloaded.state['login_failed'] is False
+    assert reloaded.state['password_submissions'] == 0

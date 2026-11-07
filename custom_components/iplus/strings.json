@@ -1,0 +1,61 @@
+{
+  "title": "Plus na kart\u0119",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Plus na kart\u0119",
+        "description": "Sign in to your Plus account.",
+        "data": {
+          "username": "Username or email",
+          "password": "Password"
+        }
+      },
+      "sms": {
+        "title": "SMS verification",
+        "description": "Enter the four-digit SMS code from Plus to resume the saved session.",
+        "data": {
+          "code": "SMS code"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate",
+        "description": "Confirm your Plus password. An SMS code may be required.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication credentials.",
+      "cannot_connect": "Unable to connect to Plus.",
+      "invalid_code": "Enter exactly four digits."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Reauthentication successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling",
+        "data": {
+          "scan_interval": "Polling interval (minutes, minimum 15)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "remaining_data": {
+        "name": "Remaining data"
+      },
+      "total_data": {
+        "name": "Total data"
+      },
+      "valid_until": {
+        "name": "Valid until"
+      }
+    }
+  }
+}

@@ -276,8 +276,17 @@ class PlusClient:
             r = self._request('GET', ACCOUNT)
             if not self._account_authenticated(r):
                 raise AuthenticationError('SSO completion could not be verified; no retry made')
+            # The safety counter limits consecutive unverified attempts, not lifetime logins.
+            self.state['password_submissions'] = 0
+            self._save()
             return
         raise PlusError('Too many authentication steps')
+
+    def reset_login_lock(self):
+        """Allow a new password attempt after the user re-entered credentials."""
+        self.state['login_failed'] = False
+        self.state['password_submissions'] = 0
+        self._save()
 
     @staticmethod
     def _account_authenticated(response):
