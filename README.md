@@ -41,3 +41,4 @@ the integration entry is deleted.
 
 For development, run `python scripts/sync_vendor.py` after changing the root
 `plus_balance` library; the root tests verify byte-identical vendored sources.
+# ha-iplus
