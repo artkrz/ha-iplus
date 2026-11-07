@@ -80,7 +80,7 @@ async def test_sensors_options_cleanup(hass, client, balance):
     assert await hass.config_entries.async_setup(value.entry_id)
     await hass.async_block_till_done()
     states = hass.states.async_all('sensor')
-    assert len(states) == 3
+    assert len(states) == 5
     remaining = next(s for s in states if 'packages' in s.attributes)
     assert float(remaining.state) == balance['subscriptions'][0]['total_remaining_gb']
     assert remaining.attributes['unit_of_measurement'] == 'GB'
@@ -89,6 +89,19 @@ async def test_sensors_options_cleanup(hass, client, balance):
     assert remaining.attributes['packages'] == balance['subscriptions'][0]['packages']
     timestamp = next(s for s in states if s.attributes.get('device_class') == 'timestamp')
     assert timestamp.state == balance['subscriptions'][0]['valid_until'].isoformat()
+    account = next(s for s in states if s.attributes.get('device_class') == 'monetary')
+    assert account.state == '25.03'
+    assert account.attributes['unit_of_measurement'] == 'PLN'
+    assert account.attributes['state_class'] == 'total'
+    assert account.attributes['icon'] == 'mdi:cash'
+    account_expiry = next(s for s in states if s.entity_id.endswith('_account_valid_until'))
+    assert account_expiry.state == '2027-10-28T12:17:06+00:00'
+    balance['subscriptions'][0]['account'] = None
+    value.runtime_data.async_set_updated_data(balance)
+    await hass.async_block_till_done()
+    assert hass.states.get(account.entity_id).state == 'unavailable'
+    assert hass.states.get(account_expiry.entity_id).state == 'unavailable'
+    assert hass.states.get(remaining.entity_id).state != 'unavailable'
     result = await hass.config_entries.options.async_init(value.entry_id)
     result = await hass.config_entries.options.async_configure(result['flow_id'], {'scan_interval': 15})
     await hass.async_block_till_done()

@@ -1,0 +1,47 @@
+name: Release
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.13'
+      - name: Verify tag matches manifest version
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          version = json.loads(Path('custom_components/iplus/manifest.json').read_text())['version']
+          tag = os.environ['GITHUB_REF_NAME']
+          if tag != f'v{version}':
+              raise SystemExit(f'Tag {tag} does not match manifest version {version}')
+          PY
+      - run: uv run pytest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: pip install pytest-homeassistant-custom-component requests
+      - run: python -m pytest tests_ha -q
+      - name: Package integration
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path('custom_components/iplus')
+          with ZipFile('iplus.zip', 'w', ZIP_DEFLATED) as archive:
+              for path in sorted(root.rglob('*')):
+                  if path.is_file() and '__pycache__' not in path.parts and path.suffix != '.pyc':
+                      archive.write(path, path.relative_to(root))
+          PY
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: iplus.zip

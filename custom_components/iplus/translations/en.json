@@ -55,6 +55,12 @@
       },
       "valid_until": {
         "name": "Valid until"
+      },
+      "account_balance": {
+        "name": "Account balance"
+      },
+      "account_valid_until": {
+        "name": "Account valid until"
       }
     }
   }

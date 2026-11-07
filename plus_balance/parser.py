@@ -34,3 +34,14 @@ def summarize_packages(packages: list[dict]) -> dict:
         'total_gb': fsum(float(p['total'] or 0) * factors[p['unit'].upper()] for p in limited),
         'valid_until': min(dates) if dates else None,
     }
+
+
+def parse_account_balance(payload: dict) -> dict:
+    """Parse prepaid funds and account validity, independently of data packages."""
+    balance = payload['balance']
+    return {
+        'amount': float(balance['amount']),
+        'currency': 'PLN',
+        'account_valid_until': balance.get('expiryDate') or None,
+        'overdue_amount': float(balance.get('overdueAmount', 0)),
+    }
