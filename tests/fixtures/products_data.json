@@ -1,0 +1,2049 @@
+{
+  "products": [
+    {
+      "rootProductId": "",
+      "productId": "1005",
+      "instanceId": "",
+      "type": "NetworkService",
+      "status": "active",
+      "name": "Roaming",
+      "description": "Dzięki usłudze Roaming możesz pozostać w kontakcie także za granicą – dzwoń, wysyłaj SMS-y i MMS-y oraz korzystaj z internetu.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "deactivate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": true,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "7851",
+      "instanceId": "10000007851",
+      "type": "Package",
+      "status": "active",
+      "nextBillingPeriodStatus": "renew",
+      "name": "GB za doładowania",
+      "description": "W ofercie na kartę w sieci Plus każde doładowanie to bonusowe gigabajty i wydłużenie okresu ważności konta. Tabela bonusów dostępna na stronie plus.pl",
+      "dueDate": "2026-12-07T09:33:48Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": null,
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": [
+            {
+              "description": "w Polsce",
+              "unlimited": false,
+              "remaining": 8.49,
+              "total": 10,
+              "unit": "GB"
+            }
+          ]
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "8965",
+      "instanceId": "10000008965",
+      "type": "Promotion",
+      "status": "active",
+      "nextBillingPeriodStatus": "renew",
+      "name": "GigaBank",
+      "description": "W ofercie na kartę w sieci Plus każde doładowanie to bonusowe gigabajty i wydłużenie okresu ważności konta. Tabela bonusów dostępna na stronie plus.pl",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": null,
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "6755",
+      "instanceId": "",
+      "type": "Package",
+      "status": "inactive",
+      "name": "Promocja roczna 6400 GB",
+      "description": "Otrzymasz 900 GB na start + 11 x 500 GB co 30 dni po włączeniu pakietu Bez Limitu za 35 zł utrzymując jego ciągłość przez 12 miesięcy. Niewykorzystane GB nie przepadają",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "6756",
+      "instanceId": "",
+      "type": "Package",
+      "status": "inactive",
+      "name": "Promocja roczna 9000 GB",
+      "description": "Otrzymasz 750 GB x 12 co 30 dni po włączeniu uprawniającego pakietu Bez Limitu za min. 40 zł utrzymując jego ciągłość przez 12 miesięcy. Niewykorzystane GB nie przepadają",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "6772",
+      "instanceId": "",
+      "type": "Package",
+      "status": "inactive",
+      "name": "Promocja roczna 1500 GB",
+      "description": "Otrzymasz 12 x 125 GB co 30 dni po włączeniu uprawniającego pakietu Bez Limitu za 30 zl utrzymując jego ciągłość przez 12 miesięcy. Niewykorzystane GB nie przepadają",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9552",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "GIGApakiet PRO+ 3",
+      "description": "GIGApakiet PRO+ bez limitu rozmowy, SMS-y, MMS-y, 100GB oraz dostęp do Disney+ za 55 zł/30 dni.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 55,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "day",
+          "basePrice": 55,
+          "activationPrice": 55,
+          "cycleLength": 0
+        },
+        {
+          "type": "Subscription",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "day",
+          "basePrice": 55,
+          "activationPrice": 55,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": [
+            "process_type",
+            "process_id",
+            "payment_reference"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9515",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "GIGApakiet MAX + promocja 2 mies. w cenie 1",
+      "description": "GIGA MAX+ — 35 zł / 30 dni\nSubskrypcja — płatność kartą co 30 dni\nGIGA MAX+ to świetna opcja dla tych, którzy chcą bardzo dużo internetu w stałej, przewidywalnej miesięcznej cenie.\nSubskrypcja działa automatycznie — podpinasz kartę i zapominasz o reszcie.\nCo dostajesz:\n\n9 900 GB na 12 miesięcy, czyli 825 GB co 30 dni w ramach rocznego bonusu.\nBonusowe GB kumulują się, jeśli nie zużyjesz ich w danym miesiącu.\n50 GB internetu bazowego, które też kumulują się na kolejny miesiąc.\nBez limitu rozmów, SMS-ów i MMS-ów\nPromocja 2 miesiące w cenie 1 dla nowych klientów — idealnie na start.\n\nMAX+ to świetny balans między dużą paczką internetu a wygodą subskrypcji.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 17,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 18,
+          "discountPeriods": 30,
+          "discountPeriodsUnit": "day",
+          "basePrice": 35,
+          "activationPrice": 17,
+          "cycleLength": 30
+        },
+        {
+          "type": "Subscription",
+          "discountPrice": 18,
+          "discountPeriods": 30,
+          "discountPeriodsUnit": "day",
+          "basePrice": 35,
+          "activationPrice": 17,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": [
+            "process_type",
+            "process_id",
+            "payment_reference"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9096",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Bez limitu i 15GB",
+      "description": "Wykonywanie nielimitowanych, krajowych połączeń za 0 zł do wszystkich krajowych sieci komórkowych i stacjonarnych, wysyłanie nielimitowanych, krajowych wiadomości SMS i MMS za 0 zł do wszystkich krajowych sieci komórkowych, Pakiet internetowy 15 GB na krajową transmisję danych.  Koszt: 30 zł ważność: 30 dni (usługa cykliczna).",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 30,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 30,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9122",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Cykliczny Pakiet internetowy 10 GB",
+      "description": "Idealny dla osób, które często korzystają z social mediów, map czy przeglądarek. 10 GB daje swobodę, a 10 dni wygodnie pokrywa cały planowany wyjazd lub tydzień intensywnego używania telefonu.\nUsługa cykliczna\nCena 10zł na 10 dni",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 10,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 10,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9583",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Oferta 1 zł = 1 dzień",
+      "description": " 1 zł = 10 GB oraz nielimitowane rozmowy, SMSy i MMSy na 1 dzień. Maksymalnie pobierzemy 30 zł.\n\n• To czego nie wykorzystasz (GB), przechodzi na nowy okres rozliczeniowy.\n\n• Jeśli doładujesz więcej niż 30 zł, to kwota powyżej 30 zł zostanie na koncie do wykorzystania na inne usługi lub przedłużenie oferty 1 zł za 1 dzień po 30 dniach.\n\n",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": true,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "promotion": {
+        "id": "1",
+        "name": "Oferta 1 zl = 1 dzien",
+        "description": "• 1 zł = 10 GB oraz nielimitowane rozmowy, SMSy i MMSy na 1 dzień. Maksymalnie pobierzemy 30 zł zgodnie z tabelą*.\n• To czego nie wykorzystasz (GB), przechodzi na nowy okres rozliczeniowy.\n• Jeśli doładujesz więcej niż 30 zł, to kwota powyżej 30 zł zostanie na koncie do wykorzystania na inne usługi lub przedłużenie oferty 1 zł za 1 dzień po 30 dniach",
+        "warningDaysBeforeEnd": 3,
+        "deeplink": {
+          "topup": {
+            "text": "Doładuj konto",
+            "url": "app://top_up"
+          },
+          "activation": {
+            "text": "Aktywuj aby dalej korzystać z oferty",
+            "url": "app://show_product_id/9583"
+          },
+          "buyMore": {
+            "text": "Dokup więcej GB",
+            "url": "app://show_product_type/supplementary_promo"
+          }
+        },
+        "additionalDescription": {
+          "extended": "Pakiet odnawia się automatycznie, gdy masz min. 1 zł na koncie. Czas trwania oraz pakiet GB zależny od stanu konta, pobierzemy maksymalnie 30 zł na pakiet.",
+          "notExtended": "krotki opis"
+        },
+        "overview": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "bullets": [
+            "1 zł = 10 GB oraz nielimitowane rozmowy, SMSy i MMSy na 1 dzień. Maksymalnie pobierzemy 30 zł zgodnie z tabelą",
+            "To czego nie wykorzystasz (GB), przechodzi na kolejny okres rozliczeniowy.",
+            "Jeśli doładujesz więcej niż 30 zł, to kwota powyżej 30zł zostanie na koncie do wykorzystania na inne usługi lub przedłużenie oferty 1zł za 1dzień po 30 dniach."
+          ]
+        },
+        "rules": {
+          "title": "Zasady działania pakietu*",
+          "entries": [
+            {
+              "condition": "Stan konta",
+              "value": "Co się wydarzy"
+            },
+            {
+              "condition": "0,80 zł",
+              "value": "Pakiet nie uruchomi się. Doładuj konto."
+            },
+            {
+              "condition": "1 zł",
+              "value": "Dostaniesz 10 GB na 1 dzień."
+            },
+            {
+              "condition": "7zł",
+              "value": "Dostaniesz 70 GB na 7 dni."
+            },
+            {
+              "condition": "18 zł",
+              "value": "Dostaniesz 180 GB na 18 dni."
+            },
+            {
+              "condition": "30 zł",
+              "value": "Dostaniesz 300 GB na 30 dni."
+            },
+            {
+              "condition": "50 zł",
+              "value": "Pobierzemy 30 zł, dostaniesz 300 GB na 30 dni, a 20 zł zostanie na koncie."
+            }
+          ]
+        },
+        "isDemo": false,
+        "isSupplementaryPromo": false,
+        "conflictingProductIds": [
+          "8965",
+          "8837",
+          "6769",
+          "9096",
+          "9246",
+          "8870",
+          "9348",
+          "8857",
+          "8211",
+          "9402",
+          "9298",
+          "9485",
+          "6742",
+          "8867",
+          "9347",
+          "9123",
+          "9508",
+          "9355",
+          "6743",
+          "8850",
+          "9466",
+          "8849",
+          "9122",
+          "9343",
+          "9121",
+          "9345",
+          "9346",
+          "9287",
+          "9288",
+          "9464",
+          "8688",
+          "9499",
+          "9203",
+          "9143",
+          "9551",
+          "8224",
+          "9515",
+          "9113",
+          "9507",
+          "9124",
+          "9506",
+          "9543",
+          "9349",
+          "9360",
+          "9421",
+          "6015",
+          "9404",
+          "9301",
+          "6018",
+          "9300",
+          "8606",
+          "9344",
+          "9505",
+          "9105",
+          "9486",
+          "6016",
+          "9354",
+          "9305",
+          "9509",
+          "9107",
+          "9106",
+          "6017",
+          "6020",
+          "9351",
+          "6019",
+          "9487",
+          "9477",
+          "9350",
+          "9552",
+          "9514",
+          "8223",
+          "9099",
+          "9109",
+          "9468",
+          "9500",
+          "9474",
+          "9299",
+          "7291",
+          "9258",
+          "9126",
+          "8026",
+          "4603",
+          "7573",
+          "8856",
+          "8454",
+          "9451",
+          "6028",
+          "4601",
+          "6311",
+          "9475",
+          "6014",
+          "6772",
+          "6755",
+          "8602",
+          "9079",
+          "9423",
+          "9501",
+          "9488",
+          "7631",
+          "4466",
+          "8097",
+          "8447",
+          "8599",
+          "8672",
+          "8857",
+          "9081",
+          "9157",
+          "9217",
+          "9260",
+          "6024",
+          "7937"
+        ]
+      },
+      "isSuperPromo": true,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "40012",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "10 GB Świat i 60 minut, 60 SMS",
+      "description": "Jednorazowy pakiet roamingowy poza Roamingiem Regulowanym: 10 GB internetu, 60 minut i 60 SMS. Ważny 30 dni; cena 200 zł.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 200,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 200,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "countryCodes": [
+        "AFG",
+        "ALB",
+        "DZA",
+        "AND",
+        "AGO",
+        "ATG",
+        "ARG",
+        "ARM",
+        "AUS",
+        "AZE",
+        "BHS",
+        "BHR",
+        "BGD",
+        "BRB",
+        "BLR",
+        "BLZ",
+        "BEN",
+        "BTN",
+        "BOL",
+        "BIH",
+        "BWA",
+        "BRA",
+        "BRN",
+        "BFA",
+        "BDI",
+        "CPV",
+        "KHM",
+        "CMR",
+        "CAN",
+        "CAF",
+        "TCD",
+        "CHL",
+        "CHN",
+        "COL",
+        "COM",
+        "COG",
+        "COD",
+        "CRI",
+        "CIV",
+        "CUB",
+        "DJI",
+        "DMA",
+        "DOM",
+        "ECU",
+        "EGY",
+        "SLV",
+        "GNQ",
+        "ERI",
+        "SWZ",
+        "ETH",
+        "FJI",
+        "GAB",
+        "GMB",
+        "GEO",
+        "GHA",
+        "GRD",
+        "GTM",
+        "GIN",
+        "GNB",
+        "GUY",
+        "HTI",
+        "HND",
+        "IND",
+        "IDN",
+        "IRN",
+        "IRQ",
+        "ISR",
+        "JAM",
+        "JPN",
+        "JOR",
+        "KAZ",
+        "KEN",
+        "KIR",
+        "PRK",
+        "KOR",
+        "KWT",
+        "KGZ",
+        "LAO",
+        "LBN",
+        "LSO",
+        "LBR",
+        "LBY",
+        "MDG",
+        "MWI",
+        "MYS",
+        "MDV",
+        "MLI",
+        "MHL",
+        "MRT",
+        "MUS",
+        "MEX",
+        "FSM",
+        "MCO",
+        "MNG",
+        "MNE",
+        "MAR",
+        "MOZ",
+        "MMR",
+        "NAM",
+        "NRU",
+        "NPL",
+        "NZL",
+        "NIC",
+        "NER",
+        "NGA",
+        "MKD",
+        "OMN",
+        "PAK",
+        "PLW",
+        "PAN",
+        "PNG",
+        "PRY",
+        "PER",
+        "PHL",
+        "QAT",
+        "RUS",
+        "RWA",
+        "KNA",
+        "LCA",
+        "VCT",
+        "WSM",
+        "SMR",
+        "STP",
+        "SAU",
+        "SEN",
+        "SRB",
+        "SYC",
+        "SLE",
+        "SGP",
+        "SLB",
+        "SOM",
+        "ZAF",
+        "SSD",
+        "LKA",
+        "SDN",
+        "SUR",
+        "CHE",
+        "SYR",
+        "TJK",
+        "TZA",
+        "THA",
+        "TLS",
+        "TGO",
+        "TON",
+        "TTO",
+        "TUN",
+        "TUR",
+        "TKM",
+        "TUV",
+        "UGA",
+        "ARE",
+        "GBR",
+        "USA",
+        "URY",
+        "UZB",
+        "VUT",
+        "VAT",
+        "VEN",
+        "VNM",
+        "YEM",
+        "ZMB",
+        "ZWE",
+        "PSE"
+      ],
+      "packageCategoryName": "Premium",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9499",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "GIGApakiet CHILL + promocja 2 mies. w cenie 1",
+      "description": "GIGA CHILL+ — 30 zł / 30 dni\nSubskrypcja — płatność kartą co 30 dni\nGIGA CHILL+ to pakiet dla tych, którzy chcą spokojnego, wygodnego korzystania z telefonu każdego dnia, bez przepłacania.\nSubskrypcja pilnuje wszystkiego za Ciebie — płatność pobiera się automatycznie.\nCo dostajesz:\n\n1 500 GB na 12 miesięcy, czyli 125 GB co 30 dni.\nBonusowe GB kumulują się, jeśli ich nie zużyjesz.\n30 GB bazowe, które również przenoszą się na kolejny miesiąc, jeśli coś zostanie.\nBez limitu rozmów, SMS-ów i MMS-ów\nPromocja 2 miesiące w cenie 1 dla nowych klientów.\n\nCHILL+ to idealny wybór, jeśli chcesz luzu, stabilności i wygodnej subskrypcji w najlepszej cenie",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 15,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 15,
+          "discountPeriods": 30,
+          "discountPeriodsUnit": "day",
+          "basePrice": 30,
+          "activationPrice": 15,
+          "cycleLength": 30
+        },
+        {
+          "type": "Subscription",
+          "discountPrice": 15,
+          "discountPeriods": 30,
+          "discountPeriodsUnit": "day",
+          "basePrice": 30,
+          "activationPrice": 15,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": [
+            "process_type",
+            "process_id",
+            "payment_reference"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9246",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Pakiet 1500 GB",
+      "description": "Promocja dostępna przy włączonym pakiecie za min. 30zł, otrzymasz 12 pakietów 100GB co 30 dni pod warunkiem utrzymania pakietu za min 30zł. Gdy nieprzerwanie korzystasz z promocji przez 12 miesięcy otrzymasz dodatkowo extra 300GB.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9347",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Bezlimit 25GB kumulacja",
+      "description": "",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 35,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 35,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9464",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Bezlimit 85GB kumulacja",
+      "description": "",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 45,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 45,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9594",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Internet 150 GB na 15 dni",
+      "description": "Pakiet internetowy jednorazowy, ważny 15 dni. Pakiet obejmuje 150 GB internetu do wykorzystania w Polsce oraz dodatkowy limit roamingowy. ",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 15,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 15,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "promotion": {
+        "id": "4",
+        "name": "Czym jest oferta 1 zł - 1 dzień?",
+        "description": "Promocja uzupełniająca GB oferty 1 dzień 1 zł",
+        "warningDaysBeforeEnd": 3,
+        "deeplink": {
+          "topup": {
+            "text": "Doładuj konto",
+            "url": "app://top_up"
+          },
+          "activation": {
+            "text": "-",
+            "url": "-"
+          },
+          "buyMore": {
+            "text": "Dokup więcej GB",
+            "url": "app://show_product_type/supplementary_promo"
+          }
+        },
+        "additionalDescription": {
+          "extended": "Pakiet jest ograniczony czasowo. Po zakończeniu pakietu niewykorzystane GB przepadają.",
+          "notExtended": "opis krotki"
+        },
+        "overview": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "bullets": [
+            "1 zł = 10 GB i 1 dzień ważności konta. Maksymalnie pobierzemy 30 zł zgodnie z tabelą *.",
+            "To czego nie wykorzystasz (GB) , przechodzi na nowy okres rozliczeniowy.",
+            "Jeśli doładujesz więcej niż 30 zł to kwota powyżej 30zł zostanie na koncie do wykorzystania na inne usługi lub przedłużenie oferty 1zł za 1dzień po 30 dniach."
+          ]
+        },
+        "rules": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "entries": [
+            {
+              "condition": "Stan konta",
+              "value": "Co się wydarzy"
+            },
+            {
+              "condition": "0,80 zł",
+              "value": "Pakiet nie uruchomi się. Doładuj konto."
+            },
+            {
+              "condition": "1 zł",
+              "value": "Dostaniesz 10 GB na 1 dzień."
+            },
+            {
+              "condition": "7zł",
+              "value": "Dostaniesz 70 GB na 7 dni."
+            },
+            {
+              "condition": "18 zł",
+              "value": "Dostaniesz 180 GB na 18 dni."
+            },
+            {
+              "condition": "30 zł",
+              "value": "Dostaniesz 300 GB na 30 dni."
+            },
+            {
+              "condition": "50 zł",
+              "value": "Pobierzemy 30 zł, dostaniesz 300 GB na 30 dni, a 20 zł zostanie na koncie."
+            }
+          ]
+        },
+        "isDemo": false,
+        "isSupplementaryPromo": true,
+        "conflictingProductIds": []
+      },
+      "isSuperPromo": true,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9586",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Internet 50 GB na 5 dni",
+      "description": "Pakiet internetowy jednorazowy, ważny 5 dni. Pakiet obejmuje 50 GB internetu do wykorzystania w Polsce oraz dodatkowy limit roamingowy. ",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 5,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 5,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "promotion": {
+        "id": "4",
+        "name": "Czym jest oferta 1 zł - 1 dzień?",
+        "description": "Promocja uzupełniająca GB oferty 1 dzień 1 zł",
+        "warningDaysBeforeEnd": 3,
+        "deeplink": {
+          "topup": {
+            "text": "Doładuj konto",
+            "url": "app://top_up"
+          },
+          "activation": {
+            "text": "-",
+            "url": "-"
+          },
+          "buyMore": {
+            "text": "Dokup więcej GB",
+            "url": "app://show_product_type/supplementary_promo"
+          }
+        },
+        "additionalDescription": {
+          "extended": "Pakiet jest ograniczony czasowo. Po zakończeniu pakietu niewykorzystane GB przepadają.",
+          "notExtended": "opis krotki"
+        },
+        "overview": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "bullets": [
+            "1 zł = 10 GB i 1 dzień ważności konta. Maksymalnie pobierzemy 30 zł zgodnie z tabelą *.",
+            "To czego nie wykorzystasz (GB) , przechodzi na nowy okres rozliczeniowy.",
+            "Jeśli doładujesz więcej niż 30 zł to kwota powyżej 30zł zostanie na koncie do wykorzystania na inne usługi lub przedłużenie oferty 1zł za 1dzień po 30 dniach."
+          ]
+        },
+        "rules": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "entries": [
+            {
+              "condition": "Stan konta",
+              "value": "Co się wydarzy"
+            },
+            {
+              "condition": "0,80 zł",
+              "value": "Pakiet nie uruchomi się. Doładuj konto."
+            },
+            {
+              "condition": "1 zł",
+              "value": "Dostaniesz 10 GB na 1 dzień."
+            },
+            {
+              "condition": "7zł",
+              "value": "Dostaniesz 70 GB na 7 dni."
+            },
+            {
+              "condition": "18 zł",
+              "value": "Dostaniesz 180 GB na 18 dni."
+            },
+            {
+              "condition": "30 zł",
+              "value": "Dostaniesz 300 GB na 30 dni."
+            },
+            {
+              "condition": "50 zł",
+              "value": "Pobierzemy 30 zł, dostaniesz 300 GB na 30 dni, a 20 zł zostanie na koncie."
+            }
+          ]
+        },
+        "isDemo": false,
+        "isSupplementaryPromo": true,
+        "conflictingProductIds": []
+      },
+      "isSuperPromo": true,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9348",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Bez Limitu i 15GB kumulacja",
+      "description": "Bez Limitu i 15GB - Niewykorzystane GB zostają z Tobą przy zachowaniu ciągłości pakietu.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 30,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 30,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "40011",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "5 GB Świat i 30 minut, 30 SMS ",
+      "description": "Jednorazowy pakiet roamingowy poza Roamingiem Regulowanym: 5 GB internetu, 30 minut i 30 SMS. Ważny 30 dni; cena 130 zł.",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 130,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 130,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "countryCodes": [
+        "AFG",
+        "ALB",
+        "DZA",
+        "AND",
+        "AGO",
+        "ATG",
+        "ARG",
+        "ARM",
+        "AUS",
+        "AZE",
+        "BHS",
+        "BHR",
+        "BGD",
+        "BRB",
+        "BLR",
+        "BLZ",
+        "BEN",
+        "BTN",
+        "BOL",
+        "BIH",
+        "BWA",
+        "BRA",
+        "BRN",
+        "BFA",
+        "BDI",
+        "CPV",
+        "KHM",
+        "CMR",
+        "CAN",
+        "CAF",
+        "TCD",
+        "CHL",
+        "CHN",
+        "COL",
+        "COM",
+        "COG",
+        "COD",
+        "CRI",
+        "CIV",
+        "CUB",
+        "DJI",
+        "DMA",
+        "DOM",
+        "ECU",
+        "EGY",
+        "SLV",
+        "GNQ",
+        "ERI",
+        "SWZ",
+        "ETH",
+        "FJI",
+        "GAB",
+        "GMB",
+        "GEO",
+        "GHA",
+        "GRD",
+        "GTM",
+        "GIN",
+        "GNB",
+        "GUY",
+        "HTI",
+        "HND",
+        "IND",
+        "IDN",
+        "IRN",
+        "IRQ",
+        "ISR",
+        "JAM",
+        "JPN",
+        "JOR",
+        "KAZ",
+        "KEN",
+        "KIR",
+        "PRK",
+        "KOR",
+        "KWT",
+        "KGZ",
+        "LAO",
+        "LBN",
+        "LSO",
+        "LBR",
+        "LBY",
+        "MDG",
+        "MWI",
+        "MYS",
+        "MDV",
+        "MLI",
+        "MHL",
+        "MRT",
+        "MUS",
+        "MEX",
+        "FSM",
+        "MCO",
+        "MNG",
+        "MNE",
+        "MAR",
+        "MOZ",
+        "MMR",
+        "NAM",
+        "NRU",
+        "NPL",
+        "NZL",
+        "NIC",
+        "NER",
+        "NGA",
+        "MKD",
+        "OMN",
+        "PAK",
+        "PLW",
+        "PAN",
+        "PNG",
+        "PRY",
+        "PER",
+        "PHL",
+        "QAT",
+        "RUS",
+        "RWA",
+        "KNA",
+        "LCA",
+        "VCT",
+        "WSM",
+        "SMR",
+        "STP",
+        "SAU",
+        "SEN",
+        "SRB",
+        "SYC",
+        "SLE",
+        "SGP",
+        "SLB",
+        "SOM",
+        "ZAF",
+        "SSD",
+        "LKA",
+        "SDN",
+        "SUR",
+        "CHE",
+        "SYR",
+        "TJK",
+        "TZA",
+        "THA",
+        "TLS",
+        "TGO",
+        "TON",
+        "TTO",
+        "TUN",
+        "TUR",
+        "TKM",
+        "TUV",
+        "UGA",
+        "ARE",
+        "GBR",
+        "USA",
+        "URY",
+        "UZB",
+        "VUT",
+        "VAT",
+        "VEN",
+        "VNM",
+        "YEM",
+        "ZMB",
+        "ZWE",
+        "PSE"
+      ],
+      "packageCategoryName": "Komfort",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9121",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Cykliczny Pakiet internetowy 5 GB",
+      "description": "Niedrogi pakiet 5 GB na 5 dni – dobry wybór, jeśli korzystasz z internetu okazjonalnie lub potrzebujesz wsparcia między większymi pakietami.\nUsługa cykliczna\nCena 5zł na 5 dni",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 5,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 5,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9466",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Pakiet 9000 GB",
+      "description": "",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9346",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Bezlimit 35GB kumulacja",
+      "description": "",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 40,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 40,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9123",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Cykliczny Pakiet internetowy 30 GB",
+      "description": "Pakiet internetu stworzony dla tych, którzy chcą mieć spokój na cały miesiąc. 30 GB zapewnia komfortowe korzystanie z sieci – streaming, rozmowy wideo, praca i rozrywka.\nUsługa cykliczna\nCena 30 zł na 30 dni\n",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 30,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 30,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9595",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Internet 300 GB na 30 dni",
+      "description": "Pakiet internetowy jednorazowy, ważny 30 dni. Pakiet obejmuje 300 GB internetu do wykorzystania w Polsce oraz dodatkowy limit roamingowy. ",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 30,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 30,
+          "activationPrice": 0,
+          "cycleLength": 0
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "promotion": {
+        "id": "4",
+        "name": "Czym jest oferta 1 zł - 1 dzień?",
+        "description": "Promocja uzupełniająca GB oferty 1 dzień 1 zł",
+        "warningDaysBeforeEnd": 3,
+        "deeplink": {
+          "topup": {
+            "text": "Doładuj konto",
+            "url": "app://top_up"
+          },
+          "activation": {
+            "text": "-",
+            "url": "-"
+          },
+          "buyMore": {
+            "text": "Dokup więcej GB",
+            "url": "app://show_product_type/supplementary_promo"
+          }
+        },
+        "additionalDescription": {
+          "extended": "Pakiet jest ograniczony czasowo. Po zakończeniu pakietu niewykorzystane GB przepadają.",
+          "notExtended": "opis krotki"
+        },
+        "overview": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "bullets": [
+            "1 zł = 10 GB i 1 dzień ważności konta. Maksymalnie pobierzemy 30 zł zgodnie z tabelą *.",
+            "To czego nie wykorzystasz (GB) , przechodzi na nowy okres rozliczeniowy.",
+            "Jeśli doładujesz więcej niż 30 zł to kwota powyżej 30zł zostanie na koncie do wykorzystania na inne usługi lub przedłużenie oferty 1zł za 1dzień po 30 dniach."
+          ]
+        },
+        "rules": {
+          "title": "Czym jest oferta 1 zł = 1 dzień?",
+          "entries": [
+            {
+              "condition": "Stan konta",
+              "value": "Co się wydarzy"
+            },
+            {
+              "condition": "0,80 zł",
+              "value": "Pakiet nie uruchomi się. Doładuj konto."
+            },
+            {
+              "condition": "1 zł",
+              "value": "Dostaniesz 10 GB na 1 dzień."
+            },
+            {
+              "condition": "7zł",
+              "value": "Dostaniesz 70 GB na 7 dni."
+            },
+            {
+              "condition": "18 zł",
+              "value": "Dostaniesz 180 GB na 18 dni."
+            },
+            {
+              "condition": "30 zł",
+              "value": "Dostaniesz 300 GB na 30 dni."
+            },
+            {
+              "condition": "50 zł",
+              "value": "Pobierzemy 30 zł, dostaniesz 300 GB na 30 dni, a 20 zł zostanie na koncie."
+            }
+          ]
+        },
+        "isDemo": false,
+        "isSupplementaryPromo": true,
+        "conflictingProductIds": []
+      },
+      "isSuperPromo": true,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9345",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "30 GB/30 dni za 30 zł kumulacja",
+      "description": "Pakiet internetu stworzony dla tych, którzy chcą mieć spokój na cały miesiąc. 30 GB zapewnia komfortowe korzystanie z sieci – streaming, rozmowy wideo, praca i rozrywka.\nNiewykorzystany internet zostaje z Tobą, gdy utrzymujesz aktywny ten pakiet lub inny internetowy.\nUsługa cykliczna\nCena 30 zł na 30 dni",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 30,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 30,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9468",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Bez limitu 24h za 5zł",
+      "description": "Bezlimit 24h za 5zl - Pakiet jednorazowy, rozmowy, SMS-y, MMS-y bez limitu za 5zl/24h",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 5,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 5,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9344",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "10 GB/10 dni za 10 zł kumulacja",
+      "description": "Idealny dla osób, które często korzystają z social mediów, map czy przeglądarek. 10 GB daje swobodę, a 10 dni wygodnie pokrywa cały planowany wyjazd lub tydzień intensywnego używania telefonu.\nNiewykorzystane GB zostają z Tobą, jeśli masz  aktywny ten lub inny pakiet\nUsługa cykliczna\nCena 10zł na 10 dni",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 10,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 10,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9402",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "Promocja 6400 GB",
+      "description": "Promocja dostępna przy włączonym pakiecie za min. 35zł, otrzymasz na start 900 GB + 11 pakietów 500GB co 30 dni pod warunkiem utrzymania pakietu za min 35zł. ",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 0,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 0,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "one-off",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    },
+    {
+      "rootProductId": "",
+      "productId": "9343",
+      "instanceId": "",
+      "type": "Promotion",
+      "status": "inactive",
+      "name": "5 GB/5 dni za 5 zł kumulacja",
+      "description": "Niedrogi pakiet 5 GB na 5 dni – dobry wybór, jeśli korzystasz z internetu okazjonalnie lub potrzebujesz wsparcia między większymi pakietami.\nNiewykorzystane GB zostają z Tobą, jeśli masz  aktywny ten lub inny pakiet\nUsługa cykliczna\nCena 5zł na 5 dni",
+      "dueDate": "0001-01-01T00:00:00Z",
+      "price": 5,
+      "priceList": [
+        {
+          "type": "Balance",
+          "discountPrice": 0,
+          "discountPeriods": 0,
+          "discountPeriodsUnit": "",
+          "basePrice": 5,
+          "activationPrice": 0,
+          "cycleLength": 30
+        }
+      ],
+      "documents": null,
+      "operations": [
+        {
+          "name": "activate",
+          "parameters": null
+        }
+      ],
+      "categories": [
+        {
+          "productType": "data",
+          "displayName": "Internet",
+          "usages": null
+        }
+      ],
+      "freeOfCharge": false,
+      "cycleType": "cyclic",
+      "isVas": false,
+      "isUfor": false,
+      "isSwapPlan": false,
+      "isSuperPromo": false,
+      "isOther": false
+    }
+  ]
+}
