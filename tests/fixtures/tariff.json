@@ -1,0 +1,33 @@
+{
+  "id": "78",
+  "name": "Plus Elastyczna na Kartę",
+  "description": "",
+  "documents": null,
+  "availableTariffs": [
+    {
+      "id": "105",
+      "name": "Giga Plus",
+      "description": "",
+      "changePrice": 0,
+      "documents": [
+        {
+          "name": "Regulamin",
+          "url": "https://api.plus.pl/tos/6104b30449fea9207a22ac5e305baae95eb4e7e899f945e5efcf2e5ff9672ffc.pdf"
+        }
+      ]
+    },
+    {
+      "id": "104",
+      "name": "Maxi Plush",
+      "description": "",
+      "changePrice": 0,
+      "documents": [
+        {
+          "name": "Regulamin",
+          "url": "https://api.plus.pl/tos/d1a3ee8b06bd095d6872cedaa1dbd9d91d00fa3915f4a63108dfa41c6663959a.pdf"
+        }
+      ]
+    }
+  ],
+  "status": "active"
+}

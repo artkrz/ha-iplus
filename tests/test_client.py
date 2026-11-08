@@ -59,11 +59,26 @@ def test_products_per_selected_subscription(client):
     client._api_get = Mock(side_effect=[{'accounts': [
         {'type': 'Prepaid', 'isAuthorized': True, 'subscriptions': [{'msisdn': '48000000000'}, {'msisdn': '48000000001'}]},
         {'type': 'Postpaid', 'isAuthorized': True, 'subscriptions': [{'msisdn': '48000000002'}]},
-    ]}, fixture, json.loads((Path(__file__).parent / 'fixtures/account_balance.json').read_text())])
+    ]}, fixture, json.loads((Path(__file__).parent / 'fixtures/account_balance.json').read_text()),
+        json.loads((Path(__file__).parent / 'fixtures/data_usage_history.json').read_text()),
+        json.loads((Path(__file__).parent / 'fixtures/tariff.json').read_text())])
     result = client.get_balance('000000001')
-    assert client._api_get.call_args_list[1].args == ('/v1/subscription/48000000001/products?productType=data',)
-    assert client._api_get.call_args.args == ('/v1/subscription/48000000001/balance?billsLimit=1',)
+    assert client._api_get.call_args_list[1].args == ('/v1/subscription/48000000001/products',)
+    assert client._api_get.call_args_list[2].args == ('/v1/subscription/48000000001/balance?billsLimit=1',)
     subscription, = result['subscriptions']
+    assert subscription['data_used_30d_gb'] == 2.943
+    assert subscription['tariff'] == 'Plus Elastyczna na Kartę'
+    assert subscription['used_gb'] == 1.51
+    from urllib.parse import urlsplit, parse_qs
+    from datetime import datetime, timedelta, timezone
+    history_path = client._api_get.call_args_list[3].args[0]
+    assert history_path.startswith('/v2/subscription/48000000001/packages/data/usages/history?')
+    query = parse_qs(urlsplit(history_path).query)
+    start, end = (datetime.fromisoformat(query[key][0].replace('Z', '+00:00')) for key in ('startDate', 'endDate'))
+    assert end - start == timedelta(days=30)
+    assert abs((datetime.now(timezone.utc) - end).total_seconds()) < 5
+    assert query['endDate'][0].endswith('Z')
+    assert client._api_get.call_args_list[4].args == ('/v1/subscription/48000000001/tariff',)
     assert subscription['account']['amount'] == 25.03
     assert subscription['account']['account_valid_until'] == '2027-10-28T13:17:06+01:00'
     assert subscription['msisdn'] == '48000000001'
@@ -89,7 +104,7 @@ def test_account_failure_preserves_data(client, error):
     client._api_get = Mock(side_effect=[{'accounts': [{
         'type': 'Prepaid', 'isAuthorized': True,
         'subscriptions': [{'msisdn': '48000000001'}, {'msisdn': '48000000002'}],
-    }]}, fixture, error, fixture, {'balance': {'amount': 0}}])
+    }]}, fixture, error, {}, {}, fixture, {'balance': {'amount': 0}}, {}, {}])
     first, second = client.get_balance()['subscriptions']
     assert first['account'] is None
     assert first['total_remaining_gb'] == 8.49
@@ -104,3 +119,22 @@ def test_account_auth_failure_propagates(client, error):
     }]}, {}, error])
     with pytest.raises(type(error)):
         client.get_balance()
+
+
+@pytest.mark.parametrize('endpoint', ['history', 'tariff'])
+@pytest.mark.parametrize('error', [PlusError('HTTP 500'), ValueError('invalid'), AuthenticationError(), SMSRequired()])
+def test_optional_endpoint_errors(client, endpoint, error):
+    client.ensure_session = Mock()
+    responses = [{'accounts': [{'type': 'Prepaid', 'isAuthorized': True,
+                  'subscriptions': [{'msisdn': '48000000001'}]}]},
+                 {}, {'balance': {'amount': 1}},
+                 error if endpoint == 'history' else {},
+                 error if endpoint == 'tariff' else {}]
+    client._api_get = Mock(side_effect=responses)
+    if isinstance(error, (AuthenticationError, SMSRequired)):
+        with pytest.raises(type(error)):
+            client.get_balance()
+    else:
+        result = client.get_balance()['subscriptions'][0]
+        assert result['account']['amount'] == 1
+        assert result['data_used_30d_gb' if endpoint == 'history' else 'tariff'] is None

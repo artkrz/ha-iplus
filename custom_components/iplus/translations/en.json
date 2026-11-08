@@ -61,6 +61,21 @@
       },
       "account_valid_until": {
         "name": "Account valid until"
+      },
+      "data_used_30d": {
+        "name": "Data usage (30 days)"
+      },
+      "tariff": {
+        "name": "Tariff"
+      },
+      "used_data": {
+        "name": "Used data"
+      },
+      "remaining_minutes": {
+        "name": "Remaining minutes"
+      },
+      "remaining_sms": {
+        "name": "Remaining SMS"
       }
     }
   }

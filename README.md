@@ -35,7 +35,12 @@ When authentication expires, Home Assistant requests reauthentication and, if
 needed, another SMS code. No interactive SMS prompt runs during polling.
 
 Each prepaid number has remaining data, total data (decimal GB), data package
-expiry, account balance (PLN), and account validity sensors. Account validity
+expiry, used package data (GB), data usage over the last 30 days (GB, with the
+last nonzero usage timestamp as an attribute), tariff (diagnostic), account balance
+(PLN), and account validity sensors. Remaining minutes and remaining SMS sensors
+are created when active voice or SMS packages exist; newly appearing categories
+trigger one integration reload. Unlimited packages report an unknown remaining
+value and an unlimited attribute. History and tariff failures leave those values unknown. Account validity
 refers to the card validity for calls and receiving service, independently of
 data package expiry. If the account balance endpoint is unavailable, only the
 two account sensors become unavailable; data sensors continue updating. Remaining data includes package details as attributes. Polling defaults
