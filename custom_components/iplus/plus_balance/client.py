@@ -369,7 +369,9 @@ class PlusClient:
     def get_balance(self, msisdn: str | None = None):
         """Read active prepaid data usages for each authorized subscription."""
         from urllib.parse import quote
-        from .parser import parse_account_balance, parse_products, summarize_packages
+        from datetime import datetime, timedelta, timezone
+        from .parser import (parse_account_balance, parse_products, summarize_packages,
+                             summarize_category, parse_usage_history, used_data)
         self.ensure_session()
         linked = self._api_get('/v1/sso/authorized-accounts')
         selected = re.sub(r'\D', '', msisdn) if msisdn else None
@@ -388,9 +390,11 @@ class PlusClient:
             raise PlusError('No matching authorized prepaid subscription was found')
         balances = []
         for number in numbers:
-            payload = self._api_get('/v1/subscription/' + quote(number, safe='') + '/products?productType=data')
+            payload = self._api_get('/v1/subscription/' + quote(number, safe='') + '/products')
             packages = parse_products(payload)
             summary = summarize_packages(packages)
+            summary.update(used_gb=used_data(summary), voice=summarize_category(packages, 'voice'),
+                           sms=summarize_category(packages, 'sms_mms'))
             for package in packages:
                 date = package['valid_until']
                 package['valid_until'] = date.isoformat() if date else None
@@ -404,6 +408,25 @@ class PlusClient:
             except (PlusError, ValueError, TypeError, KeyError):
                 logging.getLogger(__name__).debug('Account balance unavailable for a subscription')
                 account = None
+            now = datetime.now(timezone.utc)
+            format_date = lambda date: date.isoformat(timespec='milliseconds').replace('+00:00', 'Z')
+            optional = {
+                'history': ('/v2/subscription/' + number + '/packages/data/usages/history?startDate='
+                            + format_date(now - timedelta(days=30)) + '&endDate=' + format_date(now)),
+                'tariff': '/v1/subscription/' + number + '/tariff',
+            }
+            summary.update(data_used_30d_gb=None, last_usage=None, tariff=None)
+            for key, path in optional.items():
+                try:
+                    response = self._api_get(path)
+                    if key == 'history':
+                        summary.update(parse_usage_history(response))
+                    else:
+                        summary['tariff'] = response.get('name')
+                except (AuthenticationError, SMSRequired):
+                    raise
+                except (PlusError, ValueError, TypeError, KeyError):
+                    logging.getLogger(__name__).debug('%s unavailable for a subscription', key)
             balances.append({'msisdn': number, 'packages': packages, **summary, 'account': account})
         return {'subscriptions': balances}
 

@@ -80,7 +80,22 @@ async def test_sensors_options_cleanup(hass, client, balance):
     assert await hass.config_entries.async_setup(value.entry_id)
     await hass.async_block_till_done()
     states = hass.states.async_all('sensor')
-    assert len(states) == 5
+    assert len(states) == 8
+    for expected, icon in [('2.943', 'mdi:chart-bar'),
+                           ('1.51', 'mdi:web-check'),
+                           ('Plus Elastyczna na Kartę', 'mdi:card-account-details')]:
+        sensor = next(s for s in states if s.attributes.get('icon') == icon)
+        assert sensor.state == expected
+        if icon != 'mdi:card-account-details':
+            assert sensor.attributes['device_class'] == 'data_size'
+            assert sensor.attributes['state_class'] == 'measurement'
+            assert sensor.attributes['unit_of_measurement'] == 'GB'
+        else:
+            from homeassistant.helpers import entity_registry as er
+            assert er.async_get(hass).async_get(sensor.entity_id).entity_category.value == 'diagnostic'
+            assert 'unit_of_measurement' not in sensor.attributes
+    history = next(s for s in states if s.attributes.get('icon') == 'mdi:chart-bar')
+    assert history.attributes['last_usage'] == balance['subscriptions'][0]['last_usage']
     remaining = next(s for s in states if 'packages' in s.attributes)
     assert float(remaining.state) == balance['subscriptions'][0]['total_remaining_gb']
     assert remaining.attributes['unit_of_measurement'] == 'GB'
@@ -119,4 +134,58 @@ async def test_poll_auth_failure(hass, client, error):
     client.get_balance.side_effect = error
     with pytest.raises(ConfigEntryAuthFailed):
         await value.runtime_data._async_update_data()
+    await hass.config_entries.async_unload(value.entry_id)
+
+
+@pytest.mark.parametrize('unlimited', [False, True])
+async def test_conditional_sensors(hass, client, balance, unlimited):
+    balance['subscriptions'][0].update(
+        voice={'remaining': None if unlimited else 12, 'total': 30, 'unlimited': unlimited},
+        sms={'remaining': None if unlimited else 7, 'total': 10, 'unlimited': unlimited})
+    value = entry(hass)
+    assert await hass.config_entries.async_setup(value.entry_id)
+    await hass.async_block_till_done()
+    states = hass.states.async_all('sensor')
+    assert len(states) == 10
+    for icon, expected in [('mdi:phone', '12'), ('mdi:message-text', '7')]:
+        sensor = next(s for s in states if s.attributes.get('icon') == icon)
+        assert sensor.state == ('unknown' if unlimited else expected)
+        assert sensor.attributes['unlimited'] is unlimited
+        if icon == 'mdi:phone':
+            assert sensor.attributes['unit_of_measurement'] == 'min'
+    await hass.config_entries.async_unload(value.entry_id)
+
+
+async def test_new_category_reloads_once(hass, client, balance):
+    from copy import deepcopy
+    value = entry(hass)
+    assert await hass.config_entries.async_setup(value.entry_id)
+    await hass.async_block_till_done()
+    updated = deepcopy(balance)
+    updated['subscriptions'][0]['voice'] = {'remaining': 10, 'total': 20, 'unlimited': False}
+    with patch.object(hass.config_entries, 'async_reload', return_value=True) as reload:
+        value.runtime_data.async_set_updated_data(updated)
+        await hass.async_block_till_done()
+        value.runtime_data.async_set_updated_data(updated)
+        await hass.async_block_till_done()
+        reload.assert_called_once_with(value.entry_id)
+    await hass.config_entries.async_unload(value.entry_id)
+
+
+async def test_new_sms_category_creates_sensor_after_reload(hass, client, balance):
+    from copy import deepcopy
+    value = entry(hass)
+    assert await hass.config_entries.async_setup(value.entry_id)
+    await hass.async_block_till_done()
+    updated = deepcopy(balance)
+    updated['subscriptions'][0]['sms'] = {'remaining': 15, 'total': 20, 'unlimited': False}
+    client.get_balance.return_value = updated
+    value.runtime_data.async_set_updated_data(updated)
+    await hass.async_block_till_done()
+    sms = next(s for s in hass.states.async_all('sensor') if s.attributes.get('icon') == 'mdi:message-text')
+    assert sms.state == '15'
+    with patch.object(hass.config_entries, 'async_reload', return_value=True) as reload:
+        value.runtime_data.async_set_updated_data(updated)
+        await hass.async_block_till_done()
+        reload.assert_not_called()
     await hass.config_entries.async_unload(value.entry_id)
